@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Resultados Segunda Vuelta Presidencial 2022
+  meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+  //- link(rel="stylesheet" href="./lib/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+
+  link(rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+
+  //- link(rel="stylesheet" href="./lib/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous")
+
+  link(rel="stylesheet", href="./css/main.css")
+  link(rel="stylesheet" type="text/css" href="css/scroller.css")
+body
+.container
+
+
+
+  span.
+    <a href="https://github.com/john-guerra/resultadosPrimeraVuelta2022_historia"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+  .row
+    .col-md-12.col-xs-12
+      h1 Resultados Elecciones Colombia #[br] Segunda Vuelta 2022
+
+      //- .col-xs-5
+      //-   img.candidato(src="./img/Petro.png")
+      //- .col-xs-1
+      //-   p VS
+      //- .col-xs-5
+      //-   img.candidato(src="./img/Hernandez.png")
+
+
+  #graphic.row
+    #vis
+      div(style="display:none;")
+        img(id="imgTitle" src="img/title.png" width="100px")
+      div#vTooltip.col-xs-12.col-md-4
+        h3 Tooltip
+        p content
+        div#barChart
+
+    div.col-md-8#visFiller
+    #sections.col-xs-12.col-md-4
+      section.step
+        h2.title ¿Cómo votaron los colombianos en la segunda vuelta presidencial, 2022?
+        p Este es un análisis de la votación de los municipios colombianos en la segunda vuelta de las elecciones presidenciales.
+        p Desplace la página hacia abajo para continuar.
+
+      section.step
+        h2.title ¡Visualicemos los resultados!
+        p ¿Pero cómo? Quizá con un mapa de Colombia.
+
+      section.step
+        h2.title Agreguemos colores
+        p Podemos usar colores para diferenciar quién ganó en cada departamento. Si un departamento votó en su mayoría por #[span.colorHernandez Hernández] irá en #[span.colorHernandez naranja], si votó en su mayoría por #[span.colorPetro Petro] irá en #[span.colorPetro lila]. Este es el mapa mostrado por la Registraduría (con una selección de colores diferente).
+
+      section.step
+        h2.title Pero, ¿y los municipios?
+        p Uno de los problemas con este gráfico es que no muestra los resultados individuales de los municipios.
+
+
+      section.step
+        h2.title Resultados por municipio
+        p Por municipios el resultado es diferente, pero también es engañoso, por varias razones.
+
+
+      section.step
+        h2.title El área geográfica engaña
+        p Por ejemplo, no es lo mismo #[span.colorPetro Bogotá] donde #[span.colorPetro Petro] ganó con diferencia de #[span.colorPetro +19.91%] (#[span.colorPetro 58.59% Petro] - #[span.colorHernandez 38.48% Hernández]) que Bucaramanga donde Hernández ganó con diferencia de #[span.colorPetro +48.11%] (#[span.colorHernandez 73.58% Hernández] - #[span.colorPetro 25.27% Petro]).
+
+      section.step
+        h2.title Usemos tonalidades de color
+        p Agreguemos entonces una escala donde los colores más oscuros representan diferencias más altas, y los más claros menor diferencia.
+
+      section.step
+        h2.title ¿Y el número de votantes?
+        p Otro problema de este mapa es que muestra los resultados por área geográfica, y por ejemplo, los municipios del Amazonas tienen mucha área pero poca población.
+
+      section.step
+        h2.title Un círculo por municipio
+        p Reemplacemos entonces cada municipio por un círculo del mismo tamaño para hacer una comparación visual más acertada.
+
+      section.step
+        h2.title ¡No caben!
+        p Otro problema, los círculos aparecen encima uno del otro 🤦🏻‍♂️...
+
+      section.step
+        h2.title ¡Respeta mi burbuja!
+        p Agreguemos una fuerza de repulsión que haga que cada círculo trate de evitar estar encima de otro.
+
+      section.step
+        h2.title Pero y ajá, y ¿qué pasó con el número de votantes?
+        p Aún tenemos el problema que todos los círculos son del mismo tamaño ☹️. Qué tal si usamos el tamaño del círculo...
+
+      section.step
+        h2.title El tamaño importa (en este caso)
+        p Qué tal si usamos el #[strong área] (no el radio) de los círculos para representar el número total de votantes.
+
+      section.step
+        h2.title Detalles
+        p Si quieres saber los valores de cada municipio mueve el mouse sobre el centro del círculo.
+
+      section.step
+        h2.title Ahora sí podemos comparar
+        p Con este mapa es un poco más fácil ver cómo votó el país.
+
+      section.step
+        h2.title Patrones por regiones
+        p Se puede ver por ejemplo como al parecer los municipios cerca a la frontera con Venezuela votaron más por #[span.colorHernandez Hernández], y cómo en la Costa más por #[span.colorPetro Petro].
+
+      section.step
+        h2.title ¿Será esto cierto para toda la región?
+        p Con el mapa no es tan fácil saberlo. (En realidad los mapas no son la mejor forma de visualizar datos para la mayoría de las tareas 😉).
+
+      section.step
+        h2.title Quitemos el mapa entonces...
+        p Ahora tenemos más espacio para utilizar. Pero los municipios aún están ubicados por posición geográfica, eso ya no hace falta.
+
+      section.step
+        h2.title Todos al centro
+        p Eliminar la ubicación geográfica nos permite utilizar la ubicación para codificar más información. Por ejemplo horizontalmente por su resultado.
+
+      section.step
+        h2.title De izquierda a derecha
+        p Para diferenciar los municipios más fácilmente podemos distribuirlos horizontalmente por cómo votaron. Enviamos a la #[span.colorPetro izquierda] los que votaron más por #[span.colorPetro Petro] y a la #[span.colorHernandez derecha] los que votaron más por #[span.colorHernandez Hernández].
+
+      section.step
+        h2.title ¿Y la ubicación vertical?
+        p Lo podemos usar para dividir por regiones.
+
+      section.step
+        h2.title Votación por Regiones
+        p Este gráfico nos muestra como votó cada región de Colombia. Aquí podemos observar, por ejemplo cómo la región Pacífica votó más por #[span.colorPetro Petro], versus regiones más del centro y occidente del país, que votaron más por #[span.colorPetro Hernández]. Esto permite comparar y entender mucho más fácil los resultados finales de las elecciones.
+
+
+      section.step
+        h2.title Votación por población
+        p También podemos cambiar la posición vertical para codificar el número de votantes por población.
+
+      section.step.last
+        h2.title ¡Muchas gracias!
+        p Desarrollado por #[a(href="http://johnguerra.co") John Alexis Guerra Gómez]
+        br
+        p GEO Json #[a(href="https://github.com/finiterank/mapa-colombia-js/blob/master/colombia-municipios.json") del proyecto mapa-colombia-js] en github de #[a(href="https://github.com/finiterank") Javier Moreno ]. #[a(href="https://twitter.com/infrahumano/status/1000950294262448128")  Datos de los resultados de la segunda vuelta también liberados por Javier].
+
+        h3.title Otro análisis
+        p Acá está mi #[a(href="http://johnguerra.co/viz/resultadosSegundaVuelta2022/index_old.html") análisis previo de los resultados]
+        a(href="http://johnguerra.co/viz/resultadosSegundaVuelta2022/index_old.html")
+          img.analisisSegundaVuelta(src="img/analisisSegundaVuelta.gif" alt="Análisis Segunda Vuelta")
+
+      #extra-space
+
+
+
+
+script(src="./lib/js/d3.v5.min.js")
+script(src="./lib/js/d3-forceBd.js")
+script(src="./lib/js/d3-queue.v3.min.js")
+//- script(src="./lib/js/d3-scale-chromatic.v1.min.js")
+script(src="./lib/js/topojson.v1.min.js")
+script(src="./lib/js/d3-legend.min.js")
+//- script(src="./lib/js/jquery.min.js")
+//- script(src="./lib/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+
+script(src="./lib/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+script(src="./lib/js/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+script(src="./lib/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+
+
+
+script(src="./js/stackedBar.js")
+
+script(src="js/rebind.js")
+
+script(src="js/scrollerSegundaVuelta.js")
+script(src="js/scroller.js")
+script(src="js/sections.js")
+
+
+
+
+//- script(src="./js/choropletColombia.js")
+//- script(src="./js/main.js")
+script(src="./js/compareCities.js")
+
+
+script.
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72531610-1', 'auto');
+  ga('send', 'pageview');

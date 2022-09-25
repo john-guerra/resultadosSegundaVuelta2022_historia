@@ -1,0 +1,1 @@
+rsync -avz --delete --partial --exclude=".git/" -e "ssh -i /Users/aguerra/Dropbox/dutoVizNew.pem" * ubuntu@johnguerra.co:/var/www/resultadosSegundaVuelta2022_historia
