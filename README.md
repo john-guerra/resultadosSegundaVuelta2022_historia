@@ -1,4 +1,4 @@
-Resultados Plebiscito en Colombia por Ciudades 2022
+Resultados Segunda Vuelta Colombia 2022
 ==============================================
 <p>Este mapa muestra las votaciones por municipios Colombianos. Cada municipio está coloreado según la diferencia entre el porcentaje de votos por el si vs el porcentaje de votos por el no. Más rojo es más no, más azul es más por el si</p>
 
